@@ -194,7 +194,11 @@ btnAsignarRuta.addEventListener('click', () => {
     
     const tarjetaConductorDOM = document.getElementById(conductorEnZona);
     const nombreConductor = tarjetaConductorDOM.querySelector('h4').innerText;
-    const infoRuta = tarjetaConductorDOM.querySelector('p').innerHTML;
+    const infoRuta = tarjetaConductorDOM.querySelector('p').innerHTML; // Aquí ya viene el origen/destino de la ruta
+    
+    // CAPTURA DE HORA: Extraemos el texto del segundo párrafo <p> que contiene el Horario
+    const parrafosConductor = tarjetaConductorDOM.querySelectorAll('p');
+    const infoHorario = parrafosConductor[1] ? parrafosConductor[1].innerHTML : ''; 
 
     const nuevaRutaActiva = document.createElement('article');
     nuevaRutaActiva.className = 'active-route-card';
@@ -209,10 +213,12 @@ btnAsignarRuta.addEventListener('click', () => {
         listaHTMLEstudiantes += `<li>${nombreEst} (${cursoEst})</li>`;
     });
 
+    // Actualizamos el HTML interno para incluir la información del horario
     nuevaRutaActiva.innerHTML = `
         <button class="btn-delete-card">Desligar Ruta</button>
         <h4>Ruta Activa: ${nombreConductor}</h4>
         ${infoRuta}
+        <p>${infoHorario}</p> 
         <p style="margin-top:10px;"><strong>Pasajeros Asignados:</strong></p>
         <ul>
             ${listaHTMLEstudiantes}
@@ -249,7 +255,6 @@ btnAsignarRuta.addEventListener('click', () => {
 
     vaciarZonaArrastre();
 });
-
 // Limpieza de la zona intermedia
 function vaciarZonaArrastre() {
     if(conductorEnZona) {
