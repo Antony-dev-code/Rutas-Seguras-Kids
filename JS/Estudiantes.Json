@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "nombre": "Jaime Pérez",
+    "curso": "Primero",
+    "telefono_acudiente": "3154829102",
+    "tipo_sangre": "O+"
+  },
+  {
+    "id": 2,
+    "nombre": "Valentina Gómez",
+    "curso": "Segundo",
+    "telefono_acudiente": "3107541293",
+    "tipo_sangre": "A+"
+  },
+  {
+    "id": 3,
+    "nombre": "Mateo Rodríguez",
+    "curso": "Tercero",
+    "telefono_acudiente": "3219834756",
+    "tipo_sangre": "B+"
+  },
+  {
+    "id": 4,
+    "nombre": "Isabella Martínez",
+    "curso": "Cuarto",
+    "telefono_acudiente": "3176543210",
+    "tipo_sangre": "O-"
+  },
+  {
+    "id": 5,
+    "nombre": "Sebastián López",
+    "curso": "Quinto",
+    "telefono_acudiente": "3004567891",
+    "tipo_sangre": "A-"
+  },
+  {
+    "id": 6,
+    "nombre": "Sofía García",
+    "curso": "Primero",
+    "telefono_acudiente": "3123456789",
+    "tipo_sangre": "AB+"
+  },
+  {
+    "id": 7,
+    "nombre": "Alejandro Torres",
+    "curso": "Segundo",
+    "telefono_acudiente": "3167890123",
+    "tipo_sangre": "O+"
+  },
+  {
+    "id": 8,
+    "nombre": "Gabriela Ramírez",
+    "curso": "Tercero",
+    "telefono_acudiente": "3112345678",
+    "tipo_sangre": "A+"
+  },
+  {
+    "id": 9,
+    "nombre": "Nicolás Flores",
+    "curso": "Cuarto",
+    "telefono_acudiente": "3189012345",
+    "tipo_sangre": "B-"
+  },
+  {
+    "id": 10,
+    "nombre": "Mariana Benítez",
+    "curso": "Quinto",
+    "telefono_acudiente": "3145678901",
+    "tipo_sangre": "O+"
+  },
+  {
+    "id": 11,
+    "nombre": "Daniel Hernández",
+    "curso": "Primero",
+    "telefono_acudiente": "3201234567",
+    "tipo_sangre": "A+"
+  },
+  {
+    "id": 12,
+    "nombre": "Camila Castro",
+    "curso": "Segundo",
+    "telefono_acudiente": "3134567890",
+    "tipo_sangre": "AB-"
+  },
+  {
+    "id": 13,
+    "nombre": "Samuel Morales",
+    "curso": "Tercero",
+    "telefono_acudiente": "3190123456",
+    "tipo_sangre": "O+"
+  },
+  {
+    "id": 14,
+    "nombre": "Luciana Ortiz",
+    "curso": "Cuarto",
+    "telefono_acudiente": "3012345678",
+    "tipo_sangre": "A-"
+  },
+  {
+    "id": 15,
+    "nombre": "Joaquín Gutiérrez",
+    "curso": "Quinto",
+    "telefono_acudiente": "3045678901",
+    "tipo_sangre": "B+"
+  },
+  {
+    "id": 16,
+    "nombre": "Manuela Díaz",
+    "curso": "Primero",
+    "telefono_acudiente": "3156789012",
+    "tipo_sangre": "O-"
+  },
+  {
+    "id": 17,
+    "nombre": "Emiliano Silva",
+    "curso": "Segundo",
+    "telefono_acudiente": "3108901234",
+    "tipo_sangre": "A+"
+  },
+  {
+    "id": 18,
+    "nombre": "Antonia Vargas",
+    "curso": "Tercero",
+    "telefono_acudiente": "3223456789",
+    "tipo_sangre": "O+"
+  },
+  {
+    "id": 19,
+    "nombre": "Jerónimo Ríos",
+    "curso": "Cuarto",
+    "telefono_acudiente": "3178901234",
+    "tipo_sangre": "B+"
+  },
+  {
+    "id": 20,
+    "nombre": "Valeria Mendoza",
+    "curso": "Quinto",
+    "telefono_acudiente": "3129012345",
+    "tipo_sangre": "A+"
+  }
+]

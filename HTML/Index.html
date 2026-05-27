@@ -1,1 +1,98 @@
-Se lo debo profe
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Seguras Kids - Sistema de Gestión</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="banner-container">
+            <div class="banner-placeholder">
+                <h1 class="main-title">Rutas Seguras Kids</h1>
+                <p class="slogan">"Tu tranquilidad en cada trayecto, la seguridad de ellos en cada parada"</p>
+                    <div id="weather-widget" class="weather-widget">
+                    <p>Cargando clima...</p>
+                    </div>
+            </div>
+        </div>
+        <div class="system-subtitle-container">
+            <h2>Sistema de gestión de rutas para niños</h2>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+
+        <section class="column column-left" id="students-column">
+    <h3>Estudiantes</h3>
+    
+    <search-bar id="student-search"></search-bar>
+    
+    <div class="cards-container" id="students-pool">
+        </div>
+    </section>
+        
+       
+        <section class="column column-center">
+            <h3>Asignación de Ruta</h3>
+            <div class="drop-zone" id="main-drop-zone">
+                <p class="drop-placeholder">Arrastre aquí al estudiante o estudiantes y a la respectiva ruta para ser asignado a una ruta</p>
+                </div>
+            <button id="btn-assign-route" class="btn btn-primary" disabled>Agregar a la ruta</button>
+        </section>
+
+        <section class="column column-right" id="routes-column">
+            <h3>Conductores y sus respectivas rutas</h3>
+            <button id="btn-create-route" class="btn btn-secondary">Agregar Ruta y conductor nuevos</button>
+            <div class="cards-container" id="routes-pool">
+                </div>
+        </section>
+
+    </main>
+
+    <section class="consolidated-section">
+        <h3>Rutas Escolares Activas</h3>
+        <div class="consolidated-container" id="active-routes-container">
+            </div>
+    </section>
+
+    <div id="modal-conductor" class="modal">
+        <div class="modal-content">
+            <h3>Registrar Nuevo Conductor y Ruta</h3>
+            <form id="form-conductor">
+                <div class="form-group">
+                    <label for="cond-nombre">Nombre del Conductor:</label>
+                    <input type="text" id="cond-nombre" required placeholder="Ej. Juan Carlos Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="cond-ruta">Nombre de la Ruta:</label>
+                    <input type="text" id="cond-ruta" required placeholder="Ej. Ruta Norte - Real de Minas">
+                </div>
+                <div class="form-group">
+                    <label for="cond-edad">Edad:</label>
+                    <input type="number" id="cond-edad" required min="18" max="80" placeholder="Ej. 35">
+                </div>
+                <div class="form-group">
+                    <label for="cond-hora">Hora de inicio de ruta:</label>
+                    <input type="time" id="cond-hora" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" id="btn-cerrar-modal" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-brand">Rutas Seguras Kids</p>
+            <p class="footer-email">Contacto: info@rutasseguraskids.com</p>
+            <p class="footer-copyright">&copy; 2026 Rutas Seguras Kids. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    </body>
+    <script src="/JS/App.js"></script>
+</html>
