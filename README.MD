@@ -42,22 +42,25 @@ El núcleo del sistema de rutas se organiza en un tablero de **tres columnas int
 
 ### 📋 Columna Izquierda: Banco de Estudiantes
 ![Modulo de estudiantes](/Img/Estudiantes%20Modulo.png)
+
 Esta columna precarga automáticamente la lista de alumnos registrados en la institución.
 * **Persistencia de Datos:** Los datos provienen de un archivo estático de base de datos tipo `Estudiantes.Json`, el cual es leído e inyectado en el documento de forma asíncrona mediante la función `fetch()` de JavaScript.
 * **Interactividad:** Cada tarjeta de estudiante cuenta con propiedades nativas de arrastre (`draggable="true"`) programadas por JS para poder ser movilizadas al centro.
 
 ### 🎛️ Columna Central: Zona de Asignación Interactiva
-
-* `Zona de asignación de ruta.png`
 ![Modulo de asignación de rutas](/Img/Zona%20de%20asignación%20de%20ruta.png)
+
 Es el motor lógico del tablero. Funciona como una zona gris receptora de elementos.
 * **Lógica Drag & Drop:** Utiliza los escuchadores de eventos `dragover`, `dragleave` y `drop` de JavaScript.
+
 ![Modulo de asignación de rutas con rutas asignadas](/Img/Asignación%20rutas%20Modulo.png)
+
 * **Reglas de Negocio:** Valida en tiempo real que solo se pueda soltar **un (1) conductor** a la vez y múltiples estudiantes. Al cumplir la condición, el botón inferior se activa para compilar y generar una nueva tarjeta estructurada en la sección de **RUTAS ESCOLARES ACTIVAS**.
 
 ### 🩻 Columna Derecha: Gestión de Conductores
 
 ![Modulo de Rutas y conductores](/Img/Modulo%20Rutas%20y%20conductores.png)
+
 Módulo dedicado a dar de alta la logística de los vehículos disponibles.
 * **Creador de Tarjetas:** Cuenta con un botón que despliega una ventana emergente (**Modal**) para registrar *Nombre, Edad, Ruta* y *Horario de inicio* del conductor.
 * **Flexibilidad:** Al igual que los estudiantes, estas tarjetas se pueden jalar al centro. Si decides deshacer una ruta activa mediante el botón *Desligar*, el JavaScript destruye la tarjeta consolidada y retorna automáticamente al conductor y sus estudiantes a sus respectivas columnas de origen sin perder sus datos.
