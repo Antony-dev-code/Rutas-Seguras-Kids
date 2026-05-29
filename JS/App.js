@@ -194,7 +194,7 @@ btnAsignarRuta.addEventListener('click', () => {
     
     const tarjetaConductorDOM = document.getElementById(conductorEnZona);
     const nombreConductor = tarjetaConductorDOM.querySelector('h4').innerText;
-    const infoRuta = tarjetaConductorDOM.querySelector('p').innerHTML; // Aquí ya viene el origen/destino de la ruta
+    const infoRuta = tarjetaConductorDOM.querySelector('p').innerHTML;
     
     // CAPTURA DE HORA: Extraemos el texto del segundo párrafo <p> que contiene el Horario
     const parrafosConductor = tarjetaConductorDOM.querySelectorAll('p');
@@ -205,25 +205,45 @@ btnAsignarRuta.addEventListener('click', () => {
     nuevaRutaActiva.dataset.conductorId = conductorEnZona;
     nuevaRutaActiva.dataset.estudiantesIds = JSON.stringify(estudiantesEnZona);
 
+    // Renderizado de la lista de estudiantes con su checkbox de asistencia
     let listaHTMLEstudiantes = '';
     estudiantesEnZona.forEach(idEst => {
         const estudianteDOM = document.getElementById(idEst);
         const nombreEst = estudianteDOM.querySelector('h4').innerText;
         const cursoEst = estudianteDOM.querySelector('p').innerText;
-        listaHTMLEstudiantes += `<li>${nombreEst} (${cursoEst})</li>`;
+        
+        listaHTMLEstudiantes += `
+            <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <span>${nombreEst} (${cursoEst})</span>
+                <input type="checkbox" class="check-asistencia" style="cursor: pointer;">
+            </li>
+        `;
     });
 
-    // Actualizamos el HTML interno para incluir la información del horario
+    // Estructura interna de la tarjeta con el contador al final
     nuevaRutaActiva.innerHTML = `
         <button class="btn-delete-card">Desligar Ruta</button>
         <h4>Ruta Activa: ${nombreConductor}</h4>
         ${infoRuta}
         <p>${infoHorario}</p> 
         <p style="margin-top:10px;"><strong>Pasajeros Asignados:</strong></p>
-        <ul>
+        <ul style="list-style: none; padding-left: 0;">
             ${listaHTMLEstudiantes}
         </ul>
+        <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+        <p class="contador-asistencia"><strong>Asistencias:</strong> <span class="num-asistencias">0</span> / ${estudiantesEnZona.length}</p>
     `;
+
+    // Control de los checkboxes para actualizar el contador
+    const checkboxes = nuevaRutaActiva.querySelectorAll('.check-asistencia');
+    const visorContador = nuevaRutaActiva.querySelector('.num-asistencias');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const totalChequeados = nuevaRutaActiva.querySelectorAll('.check-asistencia:checked').length;
+            visorContador.innerText = totalChequeados;
+        });
+    });
 
     // Botón para deshacer asignación de ruta
     nuevaRutaActiva.querySelector('.btn-delete-card').addEventListener('click', () => {
